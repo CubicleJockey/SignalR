@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial", "Tutorial\Tutorial.csproj", "{522A023D-D413-43B3-A857-9AF0220C5CFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial.MVC", "Tutorial.MVC\Tutorial.MVC.csproj", "{83251B72-D17F-48FD-86C3-EF638C7586AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{522A023D-D413-43B3-A857-9AF0220C5CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522A023D-D413-43B3-A857-9AF0220C5CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522A023D-D413-43B3-A857-9AF0220C5CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83251B72-D17F-48FD-86C3-EF638C7586AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83251B72-D17F-48FD-86C3-EF638C7586AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83251B72-D17F-48FD-86C3-EF638C7586AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83251B72-D17F-48FD-86C3-EF638C7586AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

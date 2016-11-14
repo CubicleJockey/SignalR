@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SignalR Complex Method Call Examples";
+}
+<div>
+    <div>listAnimals</div>
+    <ul id="listAnimals"></ul>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            // Declare a proxy to reference the hub. 
+            var hub = $.connection.complexTypeHub;
+
+            // Create a function that the hub can call to broadcast messages.
+            hub.client.getAnimals = animalAction;
+
+            // Start the connection.
+            $.connection.hub.start().done(hubDone);
+
+            //functions
+
+            function animalAction(animal) {
+                for (let i = 0; i < animal.length; i++) {
+                    $('#listAnimals').append('<li>Name: ' + animal[i].Name + ' Number Of Legs: ' + animal[i].NumberOfLegs + '</li>');
+                }
+
+            };
+
+            function hubDone() {
+                console.log('hub connection established.');
+
+                // Call the Send method on the hub.
+                hub.server.listAnimals();
+                hub.server.superList().then(animalAction);
+            }
+        });
+    </script>
+}
