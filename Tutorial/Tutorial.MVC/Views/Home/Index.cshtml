@@ -5,10 +5,16 @@
     <div>listAnimals</div>
     <ul id="listAnimals"></ul>
 </div>
+<button type="button" id="clear">Clear</button>
 
 @section scripts
 {
     <script type="text/javascript">
+
+        $('#clear').click(function() {
+            $('#listAnimals').empty();
+        });
+
         $(function() {
             // Declare a proxy to reference the hub. 
             var hub = $.connection.complexTypeHub;
