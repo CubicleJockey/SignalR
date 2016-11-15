@@ -12,17 +12,13 @@
 
     <!--This file is generated-->
     <script type="text/javascript" src="@Url.Content(@"..\..\signalr/hubs")"></script>
+    @RenderSection("stylesheets", required: false)
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("SignlarR", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                </ul>
+                @Html.ActionLink("SignalR", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
             </div>
         </div>
     </div>

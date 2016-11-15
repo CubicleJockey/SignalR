@@ -1,0 +1,10 @@
+﻿.animalContainer {
+    background-color: #FF7F50;
+    border: thick solid #000000;
+    padding: 20px;
+    margin: 20px;
+}
+
+.underline {
+    text-decoration: underline;
+}

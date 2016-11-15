@@ -8,7 +8,7 @@ namespace Tutorial.MVC.SignalR.Hubs
     {
         public void ListAnimals()
         {
-            Clients.All.getAnimals(GetAnimals());
+            Clients.Caller.getAnimals(GetAnimals());
         }
 
         public IEnumerable<IAnimal> SuperList()
@@ -19,8 +19,9 @@ namespace Tutorial.MVC.SignalR.Hubs
             result.AddRange(GetAnimals());
             result.AddRange(GetAnimals());
             return result;
-        } 
+        }
 
+        #region Helper
         private static IEnumerable<IAnimal> GetAnimals()
         {
             return new IAnimal[]
@@ -28,6 +29,6 @@ namespace Tutorial.MVC.SignalR.Hubs
                 new Dog(), new Chicken(), new Dog(), new Chicken(), new Chicken()
             };
         }
-
+        #endregion Helper
     }
 }

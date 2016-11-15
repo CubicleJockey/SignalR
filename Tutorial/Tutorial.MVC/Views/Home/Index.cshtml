@@ -1,8 +1,8 @@
 ﻿@{
     ViewBag.Title = "SignalR Complex Method Call Examples";
 }
-<div>
-    <div>listAnimals</div>
+<div class="animalContainer">
+    <h3 class="underline">Animal List</h3>
     <ul id="listAnimals"></ul>
 </div>
 <button type="button" id="clear">Clear</button>
@@ -10,37 +10,18 @@
 @section scripts
 {
     <script type="text/javascript">
-
-        $('#clear').click(function() {
+        'use strict';
+        $('#clear').click(Empty);
+        
+        //functions
+        function Empty() {
             $('#listAnimals').empty();
-        });
-
-        $(function() {
-            // Declare a proxy to reference the hub. 
-            var hub = $.connection.complexTypeHub;
-
-            // Create a function that the hub can call to broadcast messages.
-            hub.client.getAnimals = animalAction;
-
-            // Start the connection.
-            $.connection.hub.start().done(hubDone);
-
-            //functions
-
-            function animalAction(animal) {
-                for (let i = 0; i < animal.length; i++) {
-                    $('#listAnimals').append('<li>Name: ' + animal[i].Name + ' Number Of Legs: ' + animal[i].NumberOfLegs + '</li>');
-                }
-
-            };
-
-            function hubDone() {
-                console.log('hub connection established.');
-
-                // Call the Send method on the hub.
-                hub.server.listAnimals();
-                hub.server.superList().then(animalAction);
-            }
-        });
+        }
     </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Home/index.js")"></script>
+}
+
+@section stylesheets
+{
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/Home/index.css")"/>    
 }
