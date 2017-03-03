@@ -17,8 +17,7 @@ namespace Tutorial.MVC.Controllers
         {
             hubContext = GlobalHost.ConnectionManager.GetHubContext<ComplexTypeHub>();
         }
-
-
+        
         // GET: Send
         public ActionResult Index()
         {
